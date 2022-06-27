@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <iostream>
-#include <string>
+#include <string.h>
 #include "producto.h"
 
 using namespace std;
@@ -11,20 +11,21 @@ using namespace std;
 class Tienda {
 
     char nombre[15];
-    string direccionInternet;
-    string direccionFisica;
+    char direccionInternet[24]; 
+    char direccionFisica[24];
     char telefono[8];
 
     vector<Producto *> productos;
 
     public:
-    Tienda();
+    Tienda(string nombre, string direccionInternet, string direccionFisica, string telefono);
     ~Tienda();
 
     void InsertarProducto(Producto *productoNuevo);
     void EliminarProducto(int idProducto);
     string ConsultarProductos();
 
+    void GuardarEnStreamBinario();
     
 };
 
