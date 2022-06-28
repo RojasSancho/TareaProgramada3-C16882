@@ -2,7 +2,7 @@
 #define PRODUCTO_H
 
 #include <iostream>
-#include <string>
+#include <string.h>
 using namespace std;
 
 class Producto {
@@ -10,10 +10,10 @@ class Producto {
     int id;
     char nombre[20];
     int existenciasDeProducto;
-
+     
     public:
-    Producto();
-    Producto();
+    Producto(int id, string nombre, int existenciasDeProducto);
+    
  
 };
 

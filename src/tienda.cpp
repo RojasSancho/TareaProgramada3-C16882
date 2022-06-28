@@ -12,24 +12,29 @@ Tienda::Tienda(string nombre, string direccionInternet, string direccionFisica, 
     strcpy(this->telefono, telefono.c_str());
 }
 
-void Tienda::GuardarEnStreamBinario()
+void Tienda::InsertarProducto(Producto *productoNuevo)
 {
-    ofstream *archivoSalida;
-    archivoSalida->open("tienda.dat", ios::out|ios::binary);
+    this->productos.push_back(productoNuevo);
+}
 
-    if (!archivoSalida->is_open())
-    {  
-        cerr << "No fue posible abrir el archivo tienda.dat para guardar los datos";
-    }
+void Tienda::GuardarEnStreamBinario(ostream *streamSalida)
+{
+    streamSalida->write(this->nombre, 15);
+    streamSalida->write(this->direccionInternet, 24);
+    streamSalida->write(this->direccionFisica, 24);
+    streamSalida->write(this->telefono, 8);
 
-    char *tienda[71];
-
-
-
-    archivoSalida->write((char *)pthread_self, sizeof(Tienda));
-
-    for(Producto *producto : this->productos)
+    for(Producto *producto : this->productos) 
     {
-        archivoSalida->write((char *)producto, sizeof(Producto));
+        streamSalida->write((char *)producto, sizeof(Producto));
     }
+
+    
+    
+}
+
+ostream& operator << (ostream &o, const Tienda *tienda)
+{
+    o << "INFORMACION DE LA TIENDA" << endl << "Nombre: " << tienda->nombre << endl << "Direccion de Internet: " << tienda->direccionInternet << endl << "Direccion Fisica: " << tienda->direccionFisica << endl << "Telefono: " << tienda->telefono;
+    return o;
 }

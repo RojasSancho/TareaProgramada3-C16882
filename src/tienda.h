@@ -25,8 +25,10 @@ class Tienda {
     void EliminarProducto(int idProducto);
     string ConsultarProductos();
 
-    void GuardarEnStreamBinario();
+    void GuardarEnStreamBinario(ostream *streamSalida);
+    void CargarDesdeStreamBinario(istream *streamEntrada);
     
+    friend ostream& operator << (ostream &o, const Tienda *tienda);
 };
 
 
