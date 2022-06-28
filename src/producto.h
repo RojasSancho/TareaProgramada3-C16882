@@ -2,13 +2,13 @@
 #define PRODUCTO_H
 
 #include <iostream>
-#include <string.h>
+#include <cstring>
 using namespace std;
 
 class Producto {
 
     int id;
-    char nombre[20];
+    char nombre[20]{}; 
     int existenciasDeProducto;
      
     public:

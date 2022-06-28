@@ -1,23 +1,18 @@
 #include <gtest/gtest.h>
 #include "../src/tienda.h"
-#include <string.h>
+#include <cstring>
 #include <fstream>
 #include <sstream>
 
 
 
 namespace
-{
-
-    
-    TEST(Tienda_Test, Escribir) {
+{  
+    TEST(Tienda_Test, Escribir_Leer_ArchivoBinario_Test) {
         /// AAA
 
         // Arrange - configurar el escenario
         Tienda *tiendaEsperada = new Tienda("PC Rojas", "computadorasrojas.com", "Guadalupe San Jose", "60874354");
-
-        
-        
         Producto *producto1 = new Producto(1, "Computadoras", 13);
         tiendaEsperada->InsertarProducto(producto1);
 

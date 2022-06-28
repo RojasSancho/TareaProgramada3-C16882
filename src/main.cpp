@@ -2,7 +2,7 @@
 #include "tienda.h"
 
 #include <iostream>
-#include <string>
+#include <cstring>
 #include <fstream>
 #include <vector>
 
