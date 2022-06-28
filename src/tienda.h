@@ -19,6 +19,7 @@ class Tienda {
 
     public:
     Tienda(string nombre, string direccionInternet, string direccionFisica, string telefono);
+    Tienda();
     ~Tienda();
 
     void InsertarProducto(Producto *productoNuevo);

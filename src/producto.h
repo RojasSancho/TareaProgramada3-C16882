@@ -13,8 +13,9 @@ class Producto {
      
     public:
     Producto(int id, string nombre, int existenciasDeProducto);
+    Producto();
     
- 
+    friend ostream& operator << (ostream &o, const Producto *producto);
 };
 
 #endif

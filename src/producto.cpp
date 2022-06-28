@@ -11,3 +11,16 @@ Producto::Producto(int id, string nombre, int existenciasDeProducto)
     this->existenciasDeProducto = existenciasDeProducto;
 
 }
+
+Producto::Producto()
+{
+    this->id = 0;
+    this->existenciasDeProducto = 0;
+    strcpy(this->nombre, "");
+}
+
+ostream& operator << (ostream &o, const Producto *producto)
+{
+    o << "[" << producto->id << "] - " << producto->nombre << " - Existencias: " << producto->existenciasDeProducto;
+    return o;
+}
