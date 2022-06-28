@@ -15,8 +15,8 @@ Producto::Producto(int id, string nombre, int existenciasDeProducto)
 Producto::Producto()
 {
     this->id = 0;
-    this->existenciasDeProducto = 0;
     strcpy(this->nombre, "");
+    this->existenciasDeProducto = 0;   
 }
 
 ostream& operator << (ostream &o, const Producto *producto)

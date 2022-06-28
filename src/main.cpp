@@ -10,7 +10,6 @@ using namespace std;
 
 int main() 
 {
-/*
     cout << sizeof(Producto) << endl;
     Tienda *tienda = new Tienda("Los Gallos", "gallosucr@ac.cr", "Calle Los Coyoles", "22451312");
     Producto *producto = new Producto(1, "Suavitel", 15);
@@ -26,13 +25,13 @@ int main()
 
     if(!archivoSalida.is_open())
     {
-        cerr << "";
+        cerr << "no se";
         return -1;
     }
 
     tienda->GuardarEnStreamBinario(&archivoSalida);
-*/
-    ifstream archivoEntrada;
+
+   /* ifstream archivoEntrada;
     archivoEntrada.open("tienda.dat", ios::in|ios::binary);
 
     if(!archivoEntrada.is_open())
@@ -49,4 +48,5 @@ int main()
     tienda->InsertarProducto(producto3);
 
     cout << tienda;
+    */
 }
