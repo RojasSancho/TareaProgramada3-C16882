@@ -22,6 +22,32 @@ void Tienda::InsertarProducto(Producto *productoNuevo)
     this->productos.push_back(productoNuevo);
 }
 
+void Tienda::EliminarProducto(int idProductoAEliminar)
+{
+    this->iterador = productos.begin();
+    for(Producto *producto : this->productos)
+    {
+        if((producto->ConsultarID()) == idProductoAEliminar) 
+        {
+            productos.erase(this->iterador);
+        }
+        iterador++;
+    }   
+}
+
+string Tienda::ConsultarTodosLosProductos()
+{
+    string productosTodos;
+    cout << "\nPRODUCTOS ACTUALES DE LA TIENDA: \n";
+    for(Producto *producto : this->productos)
+    {
+        cout << producto;
+    }
+
+    return productosTodos;
+
+}
+
 void Tienda::GuardarEnStreamBinario(ostream *streamSalida)
 {
     streamSalida->write(this->nombre, 15);
@@ -63,12 +89,12 @@ void Tienda::CargarDesdeStreamBinario(istream *streamEntrada)
 
 ostream& operator << (ostream &o, const Tienda *tienda)
 {
-    o << "INFORMACION DE LA TIENDA" << endl << "Nombre: " << tienda->nombre << endl << "Direccion de Internet: " << tienda->direccionInternet << endl << "Direccion Fisica: " << tienda->direccionFisica << endl << "Telefono: " << tienda->telefono << endl << endl;
+    o << "\nINFORMACION DE LA TIENDA" << endl << "Nombre: " << tienda->nombre << endl << "Direccion de Internet: " << tienda->direccionInternet << endl << "Direccion Fisica: " << tienda->direccionFisica << endl << "Telefono: " << tienda->telefono << endl << endl;
     o << "PRODUCTOS DE LA TIENDA" << endl;
 
     for(Producto *producto : tienda->productos)
     {
-        o << producto << endl;
+        o << producto;
     }
 
     return o;

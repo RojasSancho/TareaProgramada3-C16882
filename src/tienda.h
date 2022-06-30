@@ -15,6 +15,7 @@ class Tienda {
     char telefono[8]{};
 
     vector<Producto *> productos;
+    vector<Producto *> :: iterator iterador;
 
     public:
     Tienda(string nombre, string direccionInternet, string direccionFisica, string telefono);
@@ -22,8 +23,8 @@ class Tienda {
    
 
     void InsertarProducto(Producto *productoNuevo);
-    void EliminarProducto(int idProducto);
-    string ConsultarProductos();
+    void EliminarProducto(int idProductoAEliminar);
+    string ConsultarTodosLosProductos();
 
     void GuardarEnStreamBinario(ostream *streamSalida);
     void CargarDesdeStreamBinario(istream *streamEntrada);

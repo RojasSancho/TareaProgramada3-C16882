@@ -15,7 +15,12 @@ class Producto {
     Producto(int id, string nombre, int existenciasDeProducto);
     Producto();
     
+    void CambiarNombre(string nuevoNombre);
+    void CambiarNumeroDeExistencias(int nuevasExistencias);
+    int ConsultarID();
+
     friend ostream& operator << (ostream &o, const Producto *producto);
+    
 };
 
 #endif
