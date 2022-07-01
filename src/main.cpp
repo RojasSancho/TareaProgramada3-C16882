@@ -67,5 +67,8 @@ int main()
     tienda->EliminarProducto(1);
 
     cout << tienda->ConsultarTodosLosProductos();
+    
+    producto1->CambiarNumeroDeExistencias(20);
 
+    cout << tienda->ConsultarTodosLosProductos();
 }

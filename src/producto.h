@@ -18,6 +18,8 @@ class Producto {
     void CambiarNombre(string nuevoNombre);
     void CambiarNumeroDeExistencias(int nuevasExistencias);
     int ConsultarID();
+    string ConsultarNombre();
+    int ConsultarNumeroDeExistencias();
 
     friend ostream& operator << (ostream &o, const Producto *producto);
     

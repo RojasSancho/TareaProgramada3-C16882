@@ -8,7 +8,8 @@
 
 namespace
 {  
-    TEST(Tienda_Test, Escribir_Leer_ArchivoBinario_Test) {
+    TEST(Tienda_Test, Escribir_Leer_ArchivoBinario_Test) 
+    {
         /// AAA
 
         // Arrange - configurar el escenario
@@ -53,7 +54,7 @@ namespace
         delete tiendaLeida;
         delete tiendaEsperada;
 
-        string esperado = "INFORMACION DE LA TIENDA\nNombre: PC Rojas\nDireccion de Internet: computadorasrojas.com\nDireccion Fisica: Guadalupe San Jose\nTelefono: 60874354\n\nPRODUCTOS DE LA TIENDA\n[1] - Computadoras - Existencias: 13\n"; 
+        string esperado = "\nINFORMACION DE LA TIENDA\nNombre: PC Rojas\nDireccion de Internet: computadorasrojas.com\nDireccion Fisica: Guadalupe San Jose\nTelefono: 60874354\n\nPRODUCTOS DE LA TIENDA\n[1] - Computadoras - Existencias: 13\n"; 
         
         //Se valida que la salida de la tienda esperada sea correcta
         string salidaTiendaEsperada = streamSalidaTiendaEsperada.str();
@@ -62,5 +63,24 @@ namespace
         //Validar la salida de tienda leida sea igual a lo esperado
         string salidaTiendaLeidaDeArchivo = streamSalidaTiendaLeida.str();
         EXPECT_EQ(esperado, salidaTiendaLeidaDeArchivo);
+    }
+
+    TEST(Tienda_Test, Consultar_Todos_Los_Productos_Test) 
+    {
+        ///AAA
+
+        //Arrange
+        Tienda *tienda = new Tienda("PC Rojas", "pcrojas@gmail.con", "Guadalupe San Jose", "22451312");
+        
+        Producto *producto1 = new Producto(236, "Televisor", 21);
+        tienda->InsertarProducto(producto1);
+
+        // Act
+        string salidaConsultarProductos = tienda->ConsultarTodosLosProductos();
+        
+        string esperado = "\nPRODUCTOS ACTUALES DE LA TIENDA: \n[236] - Televisor - Existencias: 21\n";
+
+        //Assert
+        EXPECT_EQ(esperado, salidaConsultarProductos);
     }
 }

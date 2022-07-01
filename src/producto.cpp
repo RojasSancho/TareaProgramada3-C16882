@@ -33,6 +33,16 @@ int Producto::ConsultarID()
     return this->id;
 }
 
+string Producto::ConsultarNombre()
+{
+    return this->nombre;
+}
+
+int Producto::ConsultarNumeroDeExistencias()
+{
+    return this->existenciasDeProducto;
+}
+
 ostream& operator << (ostream &o, const Producto *producto)
 {
     o << "[" << producto->id << "] - " << producto->nombre << " - Existencias: " << producto->existenciasDeProducto << endl;

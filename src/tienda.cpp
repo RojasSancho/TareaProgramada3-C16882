@@ -38,10 +38,11 @@ void Tienda::EliminarProducto(int idProductoAEliminar)
 string Tienda::ConsultarTodosLosProductos()
 {
     string productosTodos;
-    cout << "\nPRODUCTOS ACTUALES DE LA TIENDA: \n";
+    
+    productosTodos += "\nPRODUCTOS ACTUALES DE LA TIENDA: \n";
     for(Producto *producto : this->productos)
     {
-        cout << producto;
+        productosTodos += "[" + to_string(producto->ConsultarID()) += "] - " + producto->ConsultarNombre() + " - Existencias: " + to_string(producto->ConsultarNumeroDeExistencias()) + "\n";
     }
 
     return productosTodos;
