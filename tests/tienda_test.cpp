@@ -70,17 +70,41 @@ namespace
         ///AAA
 
         //Arrange
-        Tienda *tienda = new Tienda("PC Rojas", "pcrojas@gmail.con", "Guadalupe San Jose", "22451312");
+        Tienda *tienda = new Tienda("PC Rojas", "pcrojas@gmail.com", "Guadalupe San Jose", "22451312");
         
         Producto *producto1 = new Producto(236, "Televisor", 21);
         tienda->InsertarProducto(producto1);
 
         // Act
         string salidaConsultarProductos = tienda->ConsultarTodosLosProductos();
-        
+
         string esperado = "\nPRODUCTOS ACTUALES DE LA TIENDA: \n[236] - Televisor - Existencias: 21\n";
 
         //Assert
         EXPECT_EQ(esperado, salidaConsultarProductos);
     }
+
+    TEST(Tienda_Test, StreamSalida_Test) 
+    {
+        ///AAA
+
+        //Arrange
+        Tienda *tienda = new Tienda("PC Rojas", "pcrojas@gmail.com", "Guadalupe San Jose", "22451312");
+        
+        Producto *producto1 = new Producto(236, "Televisor", 21);
+        tienda->InsertarProducto(producto1);
+
+        // Act
+        ostringstream streamSalida;
+        streamSalida << tienda;
+
+        string actual = streamSalida.str();
+        string esperado = "\nINFORMACION DE LA TIENDA\nNombre: PC Rojas\nDireccion de Internet: pcrojas@gmail.com\nDireccion Fisica: Guadalupe San Jose\nTelefono: 22451312\n\nPRODUCTOS DE LA TIENDA\n[236] - Televisor - Existencias: 21\n";
+            
+
+        //Assert
+        EXPECT_EQ(esperado, actual);
+    }
 }
+
+
