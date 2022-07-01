@@ -2,6 +2,9 @@
 #include <iostream>
 #include <fstream>
 
+#include <exception>
+#include "excepcionNumeroNegativo.h"
+
 using namespace std;
 
 Tienda::Tienda(string nombre, string direccionInternet, string direccionFisica, string telefono)
@@ -24,6 +27,11 @@ void Tienda::InsertarProducto(Producto *productoNuevo)
 
 void Tienda::EliminarProducto(int idProductoAEliminar)
 {
+    if(idProductoAEliminar < 0)
+    {
+        throw ExcepcionNumeroNegativo();
+    }
+
     this->iterador = productos.begin();
     for(Producto *producto : this->productos)
     {

@@ -2,6 +2,9 @@
 #include <iostream>
 #include <fstream>
 
+#include <exception>
+#include "excepcionNumeroNegativo.h"
+
 using namespace std;
 
 Producto::Producto(int id, string nombre, int existenciasDeProducto)
@@ -25,6 +28,11 @@ void Producto::CambiarNombre(string nuevoNombre)
 
 void Producto::CambiarNumeroDeExistencias(int nuevasExistencias)
 {
+    if(nuevasExistencias < 0)
+    {
+        throw ExcepcionNumeroNegativo();
+    }
+    
     this->existenciasDeProducto = nuevasExistencias; 
 }
 
