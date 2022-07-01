@@ -18,3 +18,4 @@ test:
 
 clean:
 		rm -Rf bin
+		rm *.dat

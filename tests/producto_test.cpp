@@ -21,6 +21,7 @@ namespace
         string actual = streamSalida.str();
         string esperado = "[500] - Camisa - Existencias: 57\n";
             
+        delete producto;
         //Assert
         EXPECT_EQ(esperado, actual);
     }

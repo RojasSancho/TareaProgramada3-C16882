@@ -79,7 +79,9 @@ namespace
         string salidaConsultarProductos = tienda->ConsultarTodosLosProductos();
 
         string esperado = "\nPRODUCTOS ACTUALES DE LA TIENDA: \n[236] - Televisor - Existencias: 21\n";
-
+        
+        delete producto1;
+        delete tienda;
         //Assert
         EXPECT_EQ(esperado, salidaConsultarProductos);
     }
@@ -101,7 +103,9 @@ namespace
         string actual = streamSalida.str();
         string esperado = "\nINFORMACION DE LA TIENDA\nNombre: PC Rojas\nDireccion de Internet: pcrojas@gmail.com\nDireccion Fisica: Guadalupe San Jose\nTelefono: 22451312\n\nPRODUCTOS DE LA TIENDA\n[236] - Televisor - Existencias: 21\n";
             
-
+        delete producto1;
+        delete tienda;
+        
         //Assert
         EXPECT_EQ(esperado, actual);
     }
