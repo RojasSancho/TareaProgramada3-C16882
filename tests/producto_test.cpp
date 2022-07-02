@@ -26,4 +26,36 @@ namespace
         EXPECT_EQ(esperado, actual);
     }
 
+    TEST(Producto_Test, Cambiar_Nombre_Test) {
+        ///AAA
+
+        //Arrange
+        Producto *producto = new Producto(74, "Memoria", 57);
+
+        // Act
+        producto->CambiarNombre("Disipador");
+        string actual = producto->ConsultarNombre();
+        string esperado = "Disipador";
+
+        delete producto;
+        //Assert
+        EXPECT_EQ(esperado, actual);
+    }
+
+    TEST(Producto_Test, Cambiar_Numero_De_Existencias_Test) {
+        ///AAA
+
+        //Arrange
+        Producto *producto = new Producto(74, "Memoria", 57);
+
+        // Act
+        producto->CambiarNumeroDeExistencias(150);
+        int actual = producto->ConsultarNumeroDeExistencias();
+        int  esperado = 150;
+
+        delete producto;
+        //Assert
+        EXPECT_EQ(esperado, actual);
+    }
+
 }
