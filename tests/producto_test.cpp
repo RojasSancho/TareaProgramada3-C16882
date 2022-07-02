@@ -3,6 +3,7 @@
 #include <cstring>
 #include <fstream>
 #include <sstream>
+#include "./../src/excepcionNumeroNegativo.h"
 
 
 
@@ -56,6 +57,22 @@ namespace
         delete producto;
         //Assert
         EXPECT_EQ(esperado, actual);
+    }
+
+    TEST(Producto_Test, Cambiar_Numero_De_Existencias_NumeroNegativo_Test) {
+        ///AAA
+
+        //Arrange
+        Producto *producto = new Producto(74, "Memoria", 57);
+
+        // Act
+        EXPECT_THROW({
+            producto->CambiarNumeroDeExistencias(-10);
+        }, ExcepcionNumeroNegativo);
+
+        delete producto;
+        //Assert
+        
     }
 
 }
