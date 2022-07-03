@@ -1,11 +1,15 @@
 FLAGS = -g -c --std=c++17
 
 all:
+		mkdir -p obj
 		mkdir -p bin
-		g++ $(FLAGS) src/main.cpp -o bin/main.o
-		g++ $(FLAGS) src/producto.cpp -o bin/producto.o
-		g++ $(FLAGS) src/tienda.cpp -o bin/tienda.o
-		g++ -o bin/tienda bin/main.o bin/producto.o  bin/tienda.o
+		g++ $(FLAGS) src/main.cpp -o obj/main.o
+		g++ -fPIC $(FLAGS) src/producto.cpp -o obj/producto.o
+		g++ -fPIC $(FLAGS) src/tienda.cpp -o obj/tienda.o
+		g++ -shared -o bin/libtienda.so obj/tienda.o obj/producto.o
+		mkdir -p bin/include
+		cp src/producto.h ./bin/include
+		cp src/tienda.h ./bin/include
 		
 test:
 		mkdir -p obj

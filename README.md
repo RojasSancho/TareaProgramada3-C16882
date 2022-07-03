@@ -25,4 +25,14 @@ Usar comando: make
 
 UTILIZAR CODIGO:
 
-Esto creara un .so y tambien creara una carpeta llamada include en la cual estaran los .h de producto y tienda, necesarios para tener una referencia en el programa cliente hacia el codigo de la biblioteca. Ademas con los .h se podran ver los metodos que se tienen disponibles de cada clase.
+Esto creara un archivo llamdo libtienda.so y tambien creara una carpeta llamada include en la cual estaran los .h de producto y tienda, necesarios para tener una referencia en el programa cliente hacia el codigo de la biblioteca. Ademas con los .h se podran ver los metodos que se tienen disponibles de cada clase. El programa cliente debe copiar el .so en su carpeta bin.
+
+COMPILAR Y EJECUTAR PRUEBAS UNITARIAS:
+
+Para compilar las pruebas unitarias de cada clase, utilice el comando en terminal: make test
+
+Para ejecutar estas pruebas, utilice: ./bin/tests
+
+LIMPIAR CARPETA BIN Y ELIMINAR .DAT:
+
+Utilice el comando en terminal: make clean
