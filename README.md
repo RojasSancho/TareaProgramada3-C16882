@@ -11,3 +11,12 @@ Estructura de la informacion general de la tienda (en archivo binario):
 | direccion fisica   | 24              | 39 |
 | telefono           | 8               | 63 |
 
+Estructura de cada producto (en archivo binario):
+
+| Campo              | Tamaño en bytes | Offset |
+| ----------         | --------------- | ------ | 
+| id                 | 4               | 0  |
+| nombre             | 20              | 4  |
+| existencias        | 4               | 24 |
+
+
