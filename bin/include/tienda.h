@@ -25,6 +25,11 @@ class Tienda {
     void InsertarProducto(Producto *productoNuevo);
     void EliminarProducto(int idProductoAEliminar);
     string ConsultarTodosLosProductos();
+    void CambiarNombre(string nuevoNombre);
+    void CambiarDireccionInternet(string nuevaDireccionInternet);
+    void CambiarDireccionFisica(string nuevaDireccionFisica);
+    void CambiarTelefono(string nuevoTelefono);
+
 
     void GuardarEnStreamBinario(ostream *streamSalida);
     void CargarDesdeStreamBinario(istream *streamEntrada);

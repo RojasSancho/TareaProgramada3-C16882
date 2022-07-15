@@ -22,4 +22,5 @@ test:
 
 clean:
 		rm -Rf bin
+		rm -Rf obj
 		rm *.dat

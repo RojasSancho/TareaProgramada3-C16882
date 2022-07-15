@@ -20,6 +20,26 @@ Tienda::Tienda()
 
 }
 
+void Tienda::CambiarNombre(string nuevoNombre) 
+{
+    strcpy(this->nombre, nuevoNombre.c_str());
+}
+
+void Tienda::CambiarDireccionInternet(string nuevaDireccionInternet) 
+{
+    strcpy(this->direccionInternet, nuevaDireccionInternet.c_str());
+}
+
+void Tienda::CambiarDireccionFisica(string nuevaDireccionFisica) 
+{
+    strcpy(this->direccionFisica, nuevaDireccionFisica.c_str());
+}
+
+void Tienda::CambiarTelefono(string nuevoTelefono) 
+{
+    strcpy(this->telefono, nuevoTelefono.c_str());
+}
+
 void Tienda::InsertarProducto(Producto *productoNuevo)
 {
     this->productos.push_back(productoNuevo);
